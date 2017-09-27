@@ -4,16 +4,31 @@ require('../src/next-collection');
 
 describe('next/collection', function () {
 
-  it('nx.mix', function () {
-    var obj1 = {name: 'fei'};
-    var obj2 = {email: '1290657123@qq.com'};
+  it('nx.Collection union', function () {
+    var arr1 =[1,2,3];
+    var arr2 =[2,3,4];
+    var arr3 =[3, 4,5,6,'a'];
+    var arr4 =['a','b',1];
 
-    var result = {};
 
-    nx.mix(result, obj1, obj2);
+    var col1 = nx.Collection.union([],arr1,arr2,arr3,arr4);
 
-    assert.equal(result.name, obj1.name);
-    assert.equal(result.email, obj2.email);
+    assert.equal(col1.length,8)
+    assert.deepEqual(col1,[1,2,3,4,5,6,'a','b']);
+
+  });
+
+  it('nx.Collection intersect', function () {
+
+    var arr1 =[1,2,3,3];
+    var arr2 =[2,3,4,3];
+    var arr3 =[3, 3,4,5,6,'a'];
+
+
+    var col1 = nx.Collection.intersect(arr1,arr2,arr3);
+    assert.equal(col1.length,1)
+    assert.deepEqual(col1,[3]);
+
   });
 
 });

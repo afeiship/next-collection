@@ -31,7 +31,7 @@
   });
 
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = nx.Collection;
+    module.exports = NxCollection;
   }
 
 }());

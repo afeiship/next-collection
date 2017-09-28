@@ -26,6 +26,17 @@
           });
           return new NxSet(filters).toArray();
         },arg1);
+      },
+      difference: function(){
+        var arg1 = arguments[0];
+        var args_ = ARRAY_PROTO.slice.call(arguments,1);
+        return args_.reduce(function(result,next){
+          var nextSet = new NxSet(next);
+          var filters = result.filter(function(item){
+            return !nextSet.has(item);
+          });
+          return new NxSet(filters).toArray();
+        },arg1);
       }
     }
   });

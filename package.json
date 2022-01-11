@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-collection",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Collection for next.",
   "homepage": "https://js.work",
   "author": {
@@ -43,5 +43,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/afeiship/boilerplate-next-class.git"
-  }
+  },
+  "keywords": [
+    "collection",
+    "next"
+  ]
 }

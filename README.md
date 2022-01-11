@@ -14,13 +14,24 @@ npm install -S @jswork/next-collection
 ## apis
 | api | params | description   |
 |-----|--------|---------------|
-| get | -      | desc balabala |
+| union | -      | Union collection. |
+| intersect | -      | Collection intersection. |
+| diff | -      | Collection difference. |
+| minus | -      | Collection except other(minus). |
 
 ## usage
 ```js
 import NxCollection from '@jswork/next-collection';
 
-// code goes here:
+const arr1 = [1, 2, 3]
+const arr2 = [1, 5, 2, 6]
+
+const col1 = nx.Collection.minus(arr1, arr2);
+const col2 = nx.Collection.minus(arr2, arr1);
+
+// result:
+// [3]
+// [5, 6]
 ```
 
 ## license
